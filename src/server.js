@@ -8,6 +8,6 @@ connect(() => {
     if (err) {
         throw new Error(`An error occurred: ${err.message}`)
       }
-    console.log(`App is running on http://localhost:${PORT}`);
+    console.log(`App is running on http://localhost:${PORT}`)
   })
 })
