@@ -4,7 +4,7 @@ const getAll = async () => Image.find({})
 
 const getImageById = async id => Image.findOne({ _id: id })
 
-const createCreate = async img => Image.create(img)
+const createImage = async img => Image.create(img)
 
 const updateImage = async (id, data) => Image.updateOne({ _id: id }, data)
 
@@ -14,7 +14,7 @@ const deleteImage = async id =>
 module.exports = {
   getAll,
   getImageById,
-  createCreate,
+  createImage,
   updateImage,
   deleteImage
 }
