@@ -1,0 +1,30 @@
+{
+  "name": "Collage Official",
+  "description": "Post your pictures automatically from this beautiful extention",
+  "manifest_version": 2,
+  "version": "1.0.0",
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png"
+    },
+    "default_popup": "index.html"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "permissions": ["storage"],
+  "content_security_policy": "script-src 'self' 'sha256-UT6ldSvbjpoMDfREKV5D/ILzhCpSj/7E5cB3lE7tFdI='; object-src 'self'"
+}
