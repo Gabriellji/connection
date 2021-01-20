@@ -4,22 +4,22 @@ const mongoose = require('mongoose')
 
 const imageSchema = new mongoose.Schema(
     {
+        id: { type: String, default: uuid },
         filename: String,
         ratio: Number,
         size: { width: Number, height: Number },
         caption: String,
         origin: String,
         is_active: Boolean,
-        created: new Date(),
-      _id: { type: String, default: uuid }
+        created: { type: Date, default: Date.now },
     },
-    { versionKey: false }
+    {  timestamps: true } 
 )
 
-imageSchema.statics.toResponse = user => {
-    const { title, columns } = user
-    return { id: user._id, title, columns }
-}
+// imageSchema.statics.toResponse = image => {
+//     const { filename, ratio, size, caption, origin, is_active, created } = image
+//     return { id: image._id, filename, ratio, size, caption, origin, is_active, created }
+// }
 
 const Image = mongoose.model('Image', imageSchema)
 
