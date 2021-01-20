@@ -1,9 +1,9 @@
-const uuid = require('uuid')
+const { v4: uuidv4 } = require('uuid')
 const mongoose = require('mongoose')
 
 const thingSchema = new mongoose.Schema(
     {
-        id: { type: String, default: uuid },
+        id: { type: String, default: uuidv4() },
         created: { type: Date, default: Date.now },
         profile: mongoose.SchemaTypes.ObjectId,
         image: mongoose.SchemaTypes.ObjectId,
